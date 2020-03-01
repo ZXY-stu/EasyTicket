@@ -1,0 +1,63 @@
+23-May-2018 20:16:28.290 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.50
+23-May-2018 20:16:28.296 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 7 2018 20:06:05 UTC
+23-May-2018 20:16:28.297 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.50.0
+23-May-2018 20:16:28.297 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+23-May-2018 20:16:28.297 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+23-May-2018 20:16:28.298 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+23-May-2018 20:16:28.298 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_111\jre
+23-May-2018 20:16:28.298 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_111-b14
+23-May-2018 20:16:28.298 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+23-May-2018 20:16:28.298 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         I:\apache-tomcat-8.0.50
+23-May-2018 20:16:28.299 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         I:\apache-tomcat-8.0.50
+23-May-2018 20:16:28.299 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=I:\apache-tomcat-8.0.50\conf\logging.properties
+23-May-2018 20:16:28.299 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+23-May-2018 20:16:28.299 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+23-May-2018 20:16:28.299 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+23-May-2018 20:16:28.300 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+23-May-2018 20:16:28.300 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=I:\apache-tomcat-8.0.50
+23-May-2018 20:16:28.301 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=I:\apache-tomcat-8.0.50
+23-May-2018 20:16:28.302 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=I:\apache-tomcat-8.0.50\temp
+23-May-2018 20:16:28.304 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.16 using APR version 1.6.3.
+23-May-2018 20:16:28.306 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+23-May-2018 20:16:29.351 信息 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2m  2 Nov 2017)
+23-May-2018 20:16:29.747 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-8080"]
+23-May-2018 20:16:29.840 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+23-May-2018 20:16:29.843 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 2123 ms
+23-May-2018 20:16:29.884 信息 [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+23-May-2018 20:16:29.885 信息 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.50
+23-May-2018 20:16:29.922 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\comet4j-master
+23-May-2018 20:16:30.619 警告 [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [184] milliseconds.
+23-May-2018 20:16:30.658 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\comet4j-master has finished in 736 ms
+23-May-2018 20:16:30.658 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\docs
+23-May-2018 20:16:30.709 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\docs has finished in 51 ms
+23-May-2018 20:16:30.709 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\examples
+23-May-2018 20:16:32.527 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\examples has finished in 1,818 ms
+23-May-2018 20:16:32.529 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\host-manager
+23-May-2018 20:16:32.598 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\host-manager has finished in 69 ms
+23-May-2018 20:16:32.602 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\jk
+23-May-2018 20:16:35.088 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-May-2018 20:16:37.009 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\jk has finished in 4,407 ms
+23-May-2018 20:16:37.010 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\manager
+23-May-2018 20:16:37.158 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\manager has finished in 148 ms
+23-May-2018 20:16:37.158 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\ROOT
+23-May-2018 20:16:37.200 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\ROOT has finished in 41 ms
+23-May-2018 20:16:37.200 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\Server
+23-May-2018 20:16:39.028 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+23-May-2018 20:16:39.059 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\Server has finished in 1,859 ms
+23-May-2018 20:16:39.059 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\t
+23-May-2018 20:16:39.119 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\t has finished in 59 ms
+23-May-2018 20:16:39.143 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-8080"]
+23-May-2018 20:16:39.434 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+23-May-2018 20:16:39.462 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 9618 ms
+23-May-2018 20:25:09.056 严重 [ajp-apr-8009-exec-5] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+23-May-2018 20:25:09.718 严重 [ajp-apr-8009-exec-2] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 5635
+23-May-2018 20:25:10.419 严重 [ajp-apr-8009-exec-7] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 32926
+23-May-2018 20:25:11.078 严重 [ajp-apr-8009-exec-10] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+23-May-2018 21:50:49.966 严重 [ajp-apr-8009-exec-4] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+23-May-2018 21:50:50.655 严重 [ajp-apr-8009-exec-6] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 5635
+23-May-2018 21:50:51.358 严重 [ajp-apr-8009-exec-8] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 32926
+23-May-2018 21:50:52.098 严重 [ajp-apr-8009-exec-9] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+23-May-2018 22:41:09.999 严重 [ajp-apr-8009-exec-2] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+23-May-2018 22:41:10.510 严重 [ajp-apr-8009-exec-7] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 5635
+23-May-2018 22:41:11.028 严重 [ajp-apr-8009-exec-10] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 32926
+23-May-2018 22:41:11.558 严重 [ajp-apr-8009-exec-1] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245

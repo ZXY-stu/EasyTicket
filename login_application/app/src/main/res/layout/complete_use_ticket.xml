@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="1dp"
+        >
+
+
+        <!--门票图片-->
+
+        <LinearLayout
+            android:layout_height="@dimen/ticket_picture_size"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            >
+            <ImageView
+                android:id="@+id/ticket_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/zoomSize"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/paddingtop"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/paddingtop"
+            >
+
+            <TextView
+                android:id="@+id/ticket_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/ticket_name_size"
+                android:textColor="@color/black"
+                />
+
+                <TextView
+                    android:id="@+id/ticket_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/red"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    />
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingtop"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+                    android:text="@string/ticket_nums"
+                    />
+
+                <TextView
+                    android:id="@+id/ticket_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:gravity="center"
+                    android:textColor="@color/gray"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingtop"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+                    android:text="@string/station"
+                    />
+
+                <TextView
+                    android:id="@+id/original_destination_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    android:text="火车站->长沙南站"
+
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_share_evaluate_size"
+                android:layout_marginTop="@dimen/paddingtop"
+                android:gravity="right"
+                >
+                <Button
+                    android:id="@+id/share_ticket"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/share"
+                    android:background="@color/gray"
+                    android:layout_marginRight="@dimen/button_space"
+                    />
+
+                <Button
+                    android:id="@+id/evaluate"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/evaluate"
+                    android:background="@color/gray"
+                    android:layout_marginRight="@dimen/button_space"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line"
+        />
+
+</LinearLayout>

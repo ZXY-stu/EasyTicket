@@ -1,0 +1,2 @@
+mac:1235646--ticketCode:5656--phone:115579595--ticketType:1
+mac:12356426--ticketCode:56256--phone:1155179595--ticketType:12

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_1"
+    android:orientation="vertical"
+    tools:context="com.easyticket.et.zxy.activity.Deal">
+
+    <!--标题栏-->
+    <com.easyticket.et.zxy.util.TitleBar
+        android:id="@+id/home_mine_titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/frame_left_space"
+        android:layout_marginTop="@dimen/frame_top_space"
+        android:layout_marginRight="@dimen/frame_right_space"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:id="@+id/person_info"
+            android:background="@drawable/line_ovel1"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:src="@drawable/person" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/person_name"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:id="@+id/keySet"
+            android:background="@drawable/line_ovel1"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:src="@drawable/key2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/keySet"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:id="@+id/myWallet"
+            android:background="@drawable/line_ovel1"
+            >
+            <ImageView
+
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginLeft="@dimen/button_space"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/wallet" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/myWallet"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:id="@+id/pay_set"
+            android:background="@drawable/line_ovel1"
+            android:layout_marginTop="@dimen/paddingtop"
+            >
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginLeft="@dimen/button_space"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/pay" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/paySet"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:id="@+id/phone_bind"
+            android:background="@drawable/line_ovel1"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginLeft="@dimen/button_space"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/phone1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/phoneBind"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:background="@drawable/line_ovel1"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:src="@drawable/logout" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/logout"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/about_us"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/LineSize"
+            android:background="@drawable/line_ovel1"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:src="@drawable/about" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/gray"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/button_space"
+                android:textSize="@dimen/deal_page_size"
+                android:text="@string/about_us"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

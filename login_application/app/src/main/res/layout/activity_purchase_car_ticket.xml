@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subway_car_Line_size"
+            android:background="@drawable/line_ovel"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="@string/discount"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/ticket_name_size"
+                        android:gravity="right"
+                        />
+
+                    <ImageView
+                        android:id="@+id/choose_area"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/down_arrow"
+                        />
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/choose_start_date"
+                    android:layout_width="@dimen/date_size"
+                    android:layout_height="@dimen/date_size"
+                    android:src="@drawable/date"
+                    />
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="@string/discount"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/ticket_name_size"
+                        android:gravity="right"
+                        />
+
+                    <ImageView
+                        android:id="@+id/choose_subway_line"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/down_arrow"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subway_car_Line_size"
+            android:background="@drawable/line_ovel"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/choose_subway_original"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:textSize="@dimen/ticket_name_size"
+                        android:text="@string/near_look"
+                        />
+
+                    <ImageView
+                        android:id="@+id/switch_original_destinaiton"
+                        android:layout_width="@dimen/date_size"
+                        android:layout_height="@dimen/date_size"
+                        android:src="@drawable/transfer"
+                        />
+
+                    <TextView
+                        android:id="@+id/choose_subway_destination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="@dimen/ticket_name_size"
+                        android:textColor="@color/black"
+                        android:text="@string/near_look"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/subway_car_Line_size"
+            android:background="@drawable/line_ovel"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="@dimen/ticket_name_size"
+                    android:textColor="@color/black"
+                    android:text="@string/startTravel_date"
+                    />
+
+                <TextView
+                    android:id="@+id/subwayticket_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/paddingtop_saleNum"
+                    android:textSize="@dimen/ticket_brief_size"
+                    android:textColor="@color/gray"
+                    android:text="周六 "
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/checkTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/check_buton_locate"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:textSize="@dimen/ticket_name_size"
+            android:text="@string/check"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/subway_car_page_picture"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:src="@drawable/sight_1" />
+
+
+</LinearLayout>

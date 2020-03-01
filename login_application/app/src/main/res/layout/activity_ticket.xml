@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.easyticket.et.zxy.activity.TicketActiveActivity">
+
+
+     <!--标题栏-->
+     <com.easyticket.et.zxy.util.TitleBar
+         android:id="@+id/tick_title"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>
+
+     <!--主框架-->
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_margin="12dp"
+         android:background="@drawable/ticket_ovel_juxing"
+         android:orientation="vertical"
+         >
+
+
+         <!--门票图片展示-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/ticket_juxing"
+            >
+
+       <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <ImageView
+              android:id="@+id/ticket_picture"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:adjustViewBounds="true"
+              android:layout_margin="8dp"
+              app:srcCompat="@drawable/ad" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ovel"
+            android:layout_margin="10dp"
+            >
+
+        <TextView
+            android:id="@+id/ticket_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/ticket_name"
+            android:textSize="18dp" />
+        </LinearLayout>
+
+      </RelativeLayout>
+    </LinearLayout>
+
+       <!--门票详情-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:background="@drawable/line_ovel">
+
+                <TextView
+                    android:id="@+id/ticket_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ticket_price"
+                    android:layout_weight="9"
+                    android:layout_marginTop="@dimen/paddingtop"
+                    android:layout_marginLeft="@dimen/paddingleft"
+                    android:textSize="@dimen/dealtextsize"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textColor="@color/red"
+                    android:layout_marginTop="@dimen/paddingtop"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="@dimen/line_size"
+              android:background="@drawable/line_ovel"
+              >
+
+              <TextView
+                  android:id="@+id/ticket_time"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/ticket_time"
+                  android:layout_weight="9"
+                  android:layout_marginTop="@dimen/paddingtop"
+                  android:layout_marginLeft="@dimen/paddingleft"
+                  android:textSize="@dimen/dealtextsize"
+                  android:textColor="@color/black"
+                  />
+
+              <TextView
+                  android:id="@+id/time"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/time"
+                  android:textColor="@color/red"
+                  android:layout_marginTop="@dimen/paddingtop"
+                  android:gravity="center"
+                  android:layout_weight="1"
+                  android:textSize="18dp" />
+
+          </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+                android:background="@drawable/line_ovel">
+                <TextView
+                    android:id="@+id/ticket_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ticket_status"
+                    android:layout_weight="9"
+                    android:layout_marginTop="@dimen/paddingtop"
+                    android:layout_marginLeft="@dimen/paddingleft"
+                    android:textSize="@dimen/dealtextsize"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_use"
+                    android:textColor="@color/red"
+                    android:layout_marginTop="@dimen/paddingtop"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_size"
+              >
+
+                <TextView
+                    android:id="@+id/ticket_help"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ticket_help"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/paddingtop"
+                    android:layout_marginLeft="@dimen/paddingleft"
+                    android:textSize="@dimen/dealtextsize"
+                    android:textColor="@color/black"
+                    />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/help_active"
+                android:textColor="@color/red"
+                android:gravity="left"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+       <!--门票使用按钮-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        >
+
+      <ImageButton
+          android:id="@+id/active"
+          android:layout_width="300dp"
+          android:layout_height="60dp"
+          android:visibility="visible"
+          app:srcCompat="@drawable/active"
+      />
+
+        <ImageButton
+            android:id="@+id/use"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/use"
+            />
+
+
+    </RelativeLayout>
+
+     </LinearLayout>
+
+
+
+</LinearLayout>

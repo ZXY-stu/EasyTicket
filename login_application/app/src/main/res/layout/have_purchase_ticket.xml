@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="1dp"
+        >
+
+
+        <!--门票图片-->
+
+        <LinearLayout
+            android:layout_height="@dimen/ticket_picture_size"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            >
+            <ImageView
+                android:id="@+id/ticket_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_margin="@dimen/zoomSize"
+                />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/paddingtop"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            >
+
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingtop"
+                >
+
+                <TextView
+                    android:id="@+id/ticket_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_name_size"
+                    android:textColor="@color/black"
+                    android:text="@string/evaluate"
+                    />
+
+                <TextView
+                    android:id="@+id/ticket_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/red"
+                    android:layout_marginLeft="@dimen/button_space"
+                    android:text="@string/evaluate"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/ticket_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:gravity="center"
+                    android:textColor="@color/gray"
+                    android:text="@string/apply_to_refund"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/station_line"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingtop"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/original_destination_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ticket_dealLine_line"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/paddingtop"
+                >
+                <TextView
+                    android:id="@+id/ticket_dealLine_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/ticket_dealLine_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/ticket_price_size"
+                    android:textColor="@color/gray"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_share_evaluate_size"
+                android:layout_marginTop="@dimen/paddingtop"
+                android:gravity="right"
+                >
+                <Button
+                    android:id="@+id/apply_refund"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="@string/apply_to_refund"
+                    android:background="@color/gray"
+                    android:layout_marginRight="@dimen/button_space"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/line"
+        />
+
+</LinearLayout>

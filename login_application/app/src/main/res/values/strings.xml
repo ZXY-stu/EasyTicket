@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">易票</string>
+    <string name="title_activity_homepage">homepage</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="subway">地铁</string>
+    <string name="car">汽车</string>
+    <string name="movie">电影</string>
+    <string name="music">音乐</string>
+    <string name="park">公园</string>
+    <string name="ktv">KTV</string>
+    <string name="animal">动物园</string>
+    <string name="more">更多</string>
+    <string name="ticket_name">长沙|世界之窗</string>
+    <string name="ticket_price">票价:</string>
+    <string name="price">￥15</string>
+    <string name="ticket_status">使用状态：</string>
+    <string name="status_use">待使用</string>
+    <string name="status_active">待激活</string>
+    <string name="login">登录</string>
+    <string name="ticket_help">使用帮助：</string>
+    <string name="help_use">Warnning!!需走到门票识别区才可点击使用按钮，否则，门票将做废！</string>
+    <string name="help_active">请在需要使用之前，提取1分钟激活门票！！！</string>
+    <string name="ticket_time">使用期限:</string>
+    <string name="time">2018.3.23</string>
+    <string name="active">激活门票</string>
+    <string name="use">使用门票</string>
+    <string name="dealLine">使用期限:</string>
+    <string name="ticket_detail">门票详情</string>
+    <string name="evaluate">评价</string>
+    <string name="apply_to_refund">申请退款</string>
+    <string name="share">分享</string>
+    <string name="topay">确认支付</string>
+    <string name="station">站台：</string>
+    <string name="ticket_nums">票数：</string>
+    <string name="have_purchase">已购买</string>
+    <string name="sight">景点</string>
+    <string name="noPay">未支付</string>
+    <string name="all_Ticket">全部门票</string>
+    <string name="person_name">个人信息</string>
+    <string name="keySet">密码设置</string>
+    <string name="myWallet">我的钱包</string>
+    <string name="paySet">支付设置</string>
+    <string name="phoneBind">手机绑定</string>
+    <string name="about_us">关于易票</string>
+    <string name="refund">退款/售后</string>
+    <string name="allDeal">全部订单</string>
+    <string name="balance">账号余额</string>
+    <string name="discount">优惠卷</string>
+    <string name="gift">我的收藏</string>
+    <string name="near_look">最近浏览</string>
+    <string name="check">查询</string>
+    <string name="logout">注销账号</string>
+    <string name="startTravel_date">出发日期:</string>
+    <string name="title_activity_set_proxy">setProxyActivity</string>
+</resources>

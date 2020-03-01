@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><title>Monitoring JavaMelody on /jk_LAPTOP-Q17HPK01</title><style type='text/css'>
+/* style sheet */
+
+body {
+	background-color:white;
+	background: url(?resource=backgroundGradient.png) bottom left fixed repeat-x;
+}
+
+a {text-decoration:none; color:#0000BB;}
+a:hover {text-decoration:underline; color:#0000BB;}
+a:visited {color: #6600BB;}
+
+img {border : 0px; vertical-align : middle;}
+.synthese {
+	-moz-box-shadow: 2px 2px 3px #888;
+	-webkit-box-shadow: 2px 2px 3px #888;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#888888, direction=135, strength=3);
+}
+
+th {background-color:#F0F0F0; font-size: 10pt;}
+table {
+	border-color:gray;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px
+}
+table tr.odd td {background-color: #F5F5F5;}
+table tr.highlight td {background-color: #E0E0E0;}
+td {font-size: 10pt;}
+
+table tr:last-child td:first-child {
+	-moz-border-radius-bottomleft:5px;
+	-webkit-border-bottom-left-radius:5px;
+	border-bottom-left-radius:5px
+}
+table tr:last-child td:last-child {
+	-moz-border-radius-bottomright:5px;
+	-webkit-border-bottom-right-radius:5px;
+	border-bottom-right-radius:5px
+}
+table thead th:first-child {
+	-moz-border-radius-topleft:5px;
+	-webkit-border-top-left-radius:5px;
+	border-top-left-radius:5px
+}
+table thead th:last-child {
+	-moz-border-radius-topright:5px;
+	-webkit-border-top-right-radius:5px;
+	border-top-right-radius:5px
+}
+
+.tooltip em {
+    display:none;
+}
+.tooltip:hover {
+    border: 0;
+    position: relative;
+/* marche pas avec texte long qui se wrappe: z-index: 500; */
+    text-decoration:none;
+    text-align:left;
+}
+.tooltip:hover em {
+    font-style: normal;
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+	/* une width fixe est nécessaire pour MSIE 7,
+	mais cela gâcherait tout sur firefox, chrome ou MSIE8 qui n'en ont pas besoin
+    width: 800px; */
+    padding: 5px;
+    color: #000;
+    border: 1px solid #bbb;
+    background: #ffc;
+    -moz-box-shadow: 2px 2px 3px #888;
+    -webkit-box-shadow: 2px 2px 3px #888;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#888888, direction=135, strength=3);
+}
+
+div#track, div#handle {
+    height: 18px;
+}
+
+div#track {
+	width: 200px;
+	margin-left: 300px;
+    background: url( '?resource=scaler_slider_track.gif' ) center left repeat-x;
+}
+
+div#handle {
+    width: 18px;
+    cursor: col-resize;
+}
+
+.explainPlan {
+	font-size:8pt; font-family:monospace;
+}
+
+.info {color:green;}
+.warning {color:orange; font-weight:bold;}
+.severe {color:red; font-weight:bold;}
+
+form {background-color:#F5F5F5; font-size: 10pt;}
+
+@media print { .noPrint { display: none; } }
+
+</style>
+<link type='image/png' rel='shortcut icon' href='?resource=systemmonitor.png' />
+<script type='text/javascript' src='?resource=resizable_tables.js'></script>
+<script type='text/javascript' src='?resource=sorttable.js'></script>
+<script type='text/javascript' src='?resource=prototype.js'></script>
+<script type='text/javascript' src='?resource=effects.js'></script>
+<script type='text/javascript'>
+function showHide(id){
+  if (document.getElementById(id).style.display=='none') {
+    if (document.getElementById(id + 'Img') != null) {
+      document.getElementById(id + 'Img').src='?resource=bullets/minus.png';
+    }
+    Effect.SlideDown(id, { duration: 0.5 });
+  } else {
+    if (document.getElementById(id + 'Img') != null) {
+      document.getElementById(id + 'Img').src='?resource=bullets/plus.png';
+    }
+    Effect.SlideUp(id, { duration: 0.5 });
+  }
+}
+</script>
+</head><body>
+<h3><a name='top'></a><img width='24' height='24' src='?resource=systemmonitor.png' alt='Stats'/>
+Statistics of <a href='http://javamelody.googlecode.com' target='_blank'>JavaMelody</a> monitoring taken at 18-3-26 ÉÏÎç7:57 from 18-3-26 ÉÏÎç7:53 on /jk_LAPTOP-Q17HPK01 (Comet4J-Demo)
+</h3>
+<div align='center'>
+<div class='noPrint'>
+<a href='?' title='Refresh this page'><img src='?resource=action_refresh.png' alt='Update'/> Update</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='?format=pdf' title='Display report in PDF format'><img src='?resource=pdf.png' alt='PDF'/> PDF</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='?resource=help/help.html' target='_blank' title="Display online help in a new page"><img src='?resource=action_help.png' alt='Online help'/> Online help</a>&nbsp;&nbsp;&nbsp;&nbsp;
+Choice of period :&nbsp;
+<a href='?period=jour' title='Choice of period Day for charts and requests statistics'><img src='?resource=calendar_view_day.png' alt='Day' /> Day</a>&nbsp;
+<a href='?period=semaine' title='Choice of period Week for charts and requests statistics'><img src='?resource=calendar_view_week.png' alt='Week' /> Week</a>&nbsp;
+<a href='?period=mois' title='Choice of period Month for charts and requests statistics'><img src='?resource=calendar_view_month.png' alt='Month' /> Month</a>&nbsp;
+<a href='?period=annee' title='Choice of period Year for charts and requests statistics'><img src='?resource=calendar.png' alt='Year' /> Year</a>&nbsp;
+<a href='?period=tout' title='Choice of period All for charts and requests statistics'><img src='?resource=calendar.png' alt='All' /> All</a>&nbsp;
+<a href="javascript:showHide('customPeriod');document.customPeriodForm.startDate.focus();" 
+title='Choice of period Customized for charts and requests statistics'>
+<img src='?resource=calendar.png' alt='Customized' /> Customized</a>
+<div id='customPeriod' style='display: none;'>
+<script type='text/javascript'>
+function validateCustomPeriodForm() {
+   periodForm = document.customPeriodForm;
+   if (periodForm.startDate.value.length == 0) {
+      alert('Dates are mandatory');
+      periodForm.startDate.focus();
+      return false;
+   }
+   if (periodForm.endDate.value.length == 0) {
+      alert('Dates are mandatory');
+      periodForm.endDate.focus();
+      return false;
+   }
+   periodForm.period.value=periodForm.startDate.value + '-' + periodForm.endDate.value;
+   return true;
+}
+</script>
+<br/><br/>
+<form name='customPeriodForm' method='get' action='' onsubmit='return validateCustomPeriodForm();'>
+<br/><b>From</b>&nbsp;&nbsp;<input type='text' size='10' name='startDate' 
+/>&nbsp;&nbsp;<b>to</b>&nbsp;&nbsp;<input type='text' size='10' name='endDate' 
+/>&nbsp;&nbsp;
+(yy-m-d)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='submit' value='OK'/><br/><br/>
+<input type='hidden' name='period' value=''/>
+</form><br/>
+</div>
+</div>
+<a href='?part=graph&amp;graph=usedMemory'><img class='synthese' src='?width=200&amp;height=50&amp;graph=usedMemory' alt="Used memory" title="Used memory"/></a>
+<a href='?part=graph&amp;graph=httpSessions'><img class='synthese' src='?width=200&amp;height=50&amp;graph=httpSessions' alt="Http sessions" title="Http sessions"/></a>
+<a href='?part=graph&amp;graph=activeThreads'><img class='synthese' src='?width=200&amp;height=50&amp;graph=activeThreads' alt="Active threads" title="Active threads"/></a>
+<br/>
+<a href='?part=graph&amp;graph=activeConnections'><img class='synthese' src='?width=200&amp;height=50&amp;graph=activeConnections' alt="Active jdbc connections" title="Active jdbc connections"/></a>
+<a href='?part=graph&amp;graph=usedConnections'><img class='synthese' src='?width=200&amp;height=50&amp;graph=usedConnections' alt="Used jdbc connections" title="Used jdbc connections"/></a>
+<a href='?part=graph&amp;graph=httpHitsRate'><img class='synthese' src='?width=200&amp;height=50&amp;graph=httpHitsRate' alt="Http hits per minute" title="Http hits per minute"/></a>
+<br/>
+<a href='?part=graph&amp;graph=httpMeanTimes'><img class='synthese' src='?width=200&amp;height=50&amp;graph=httpMeanTimes' alt="Http mean times (ms)" title="Http mean times (ms)"/></a>
+<a href='?part=graph&amp;graph=httpSystemErrors'><img class='synthese' src='?width=200&amp;height=50&amp;graph=httpSystemErrors' alt="% of http errors" title="% of http errors"/></a>
+<a href='?part=graph&amp;graph=sqlHitsRate'><img class='synthese' src='?width=200&amp;height=50&amp;graph=sqlHitsRate' alt="Sql hits per minute" title="Sql hits per minute"/></a>
+<br/>
+<a href='?part=graph&amp;graph=sqlMeanTimes'><img class='synthese' src='?width=200&amp;height=50&amp;graph=sqlMeanTimes' alt="Sql mean times (ms)" title="Sql mean times (ms)"/></a>
+<a href='?part=graph&amp;graph=sqlSystemErrors'><img class='synthese' src='?width=200&amp;height=50&amp;graph=sqlSystemErrors' alt="% of sql errors" title="% of sql errors"/></a>
+<div align='right'>
+<a href="javascript:showHide('detailsGraphs');" class='noPrint'><img id='detailsGraphsImg' src='?resource=bullets/plus.png' alt=''/> Other charts</a>
+</div>
+<div id='detailsGraphs' style='display: none;'><div>
+<a href='?part=graph&amp;graph=tomcatBusyThreads'><img class='synthese' src='?width=200&amp;height=50&amp;graph=tomcatBusyThreads' alt="Tomcat busy threads" title="Tomcat busy threads"/></a>
+<a href='?part=graph&amp;graph=tomcatBytesReceived'><img class='synthese' src='?width=200&amp;height=50&amp;graph=tomcatBytesReceived' alt="Bytes received per minute" title="Bytes received per minute"/></a>
+<a href='?part=graph&amp;graph=tomcatBytesSent'><img class='synthese' src='?width=200&amp;height=50&amp;graph=tomcatBytesSent' alt="Bytes sent per minute" title="Bytes sent per minute"/></a>
+<br/>
+<a href='?part=graph&amp;graph=gc'><img class='synthese' src='?width=200&amp;height=50&amp;graph=gc' alt="% Garbage Collector time" title="% Garbage Collector time"/></a>
+<a href='?part=graph&amp;graph=threadCount'><img class='synthese' src='?width=200&amp;height=50&amp;graph=threadCount' alt="Threads count" title="Threads count"/></a>
+<a href='?part=graph&amp;graph=loadedClassesCount'><img class='synthese' src='?width=200&amp;height=50&amp;graph=loadedClassesCount' alt="Loaded classes count" title="Loaded classes count"/></a>
+<br/>
+<a href='?part=graph&amp;graph=usedNonHeapMemory'><img class='synthese' src='?width=200&amp;height=50&amp;graph=usedNonHeapMemory' alt="Used non heap memory" title="Used non heap memory"/></a>
+<a href='?part=graph&amp;graph=httpSessionsMeanAge'><img class='synthese' src='?width=200&amp;height=50&amp;graph=httpSessionsMeanAge' alt="Mean age of http sessions (min)" title="Mean age of http sessions (min)"/></a>
+</div></div>
+</div>
+<h3><a name='http'></a><img width='24' height='24' src='?resource=dbweb.png' alt='http'/>Statistics http - 1 day</h3>
+None
+<h3><a name='sql'></a><img width='24' height='24' src='?resource=db.png' alt='sql'/>Statistics sql - 1 day</h3>
+None
+<h3><a name='error'></a><img width='24' height='24' src='?resource=error.png' alt='error'/>Statistics http system errors - 1 day</h3>
+None
+<h3><a name='log'></a><img width='24' height='24' src='?resource=log.png' alt='log'/>Statistics system errors logs - 1 day</h3>
+None
+<h3><a name='currentRequests'></a><img width='24' height='24' src='?resource=hourglass.png' alt='Current requests'/>Current requests</h3>
+None
+<h3><a name='systeminfo'></a><img width='24' height='24' src='?resource=systeminfo.png' alt='System information'/>
+System information</h3>
+<table align='left' border='0' cellspacing='0' cellpadding='2' summary='System information'>
+<tr><td>Host: </td><td><b>LAPTOP-Q17HPK01@169.254.158.89</b></td> </tr>
+<tr><td>Java memory used: </td><td><a class='tooltip' href='?part=graph&amp;graph=usedMemory' onmouseover="document.getElementById('idusedMemory').src='?graph=usedMemory&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idusedMemory' alt='graph'/></em>42</a> Mb / 889 Mb&nbsp;&nbsp;&nbsp;</td><td>
+<img src='?resource=bar/rb_a.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_2.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_0.gif' alt='+' title='4.73%' /><img src='?resource=bar/rb_b0.gif' alt='+' title='4.73%' />
+</td> </tr>
+<tr><td>Nb of http sessions: </td><td><a class='tooltip' href='?part=graph&amp;graph=httpSessions' onmouseover="document.getElementById('idhttpSessions').src='?graph=httpSessions&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idhttpSessions' alt='graph'/></em>0</a></td><td></td> </tr>
+<tr><td>Nb of active threads<br/>(current http requests): </td><td><a class='tooltip' href='?part=graph&amp;graph=activeThreads' onmouseover="document.getElementById('idactiveThreads').src='?graph=activeThreads&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idactiveThreads' alt='graph'/></em>0</a></td><td></td> </tr>
+<tr><td>Nb of active jdbc connections: </td><td><a class='tooltip' href='?part=graph&amp;graph=activeConnections' onmouseover="document.getElementById('idactiveConnections').src='?graph=activeConnections&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idactiveConnections' alt='graph'/></em>0</a></td><td></td> </tr>
+<tr><td>Nb of used jdbc connections<br/>(opened if no datasource): </td><td><a class='tooltip' href='?part=graph&amp;graph=usedConnections' onmouseover="document.getElementById('idusedConnections').src='?graph=usedConnections&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idusedConnections' alt='graph'/></em>0</a></td> </tr>
+</table>
+<br/><br/><br/><br/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:showHide('detailsJava');" class='noPrint'><img id='detailsJavaImg' src='?resource=bullets/plus.png' alt=''/> Details</a>
+<br/><br/>
+<div id='detailsJava' style='display: none;'><div>
+<table align='left' border='0' cellspacing='0' cellpadding='2' summary='System details'>
+<tr><td>OS: </td><td>
+<img src='?resource=servers/windows.png' alt='OS'/>
+Windows 10 , amd64/64 (4 cores)</td></tr>
+<tr><td>Java: </td><td>Java(TM) SE Runtime Environment, 1.8.0_111-b14</td></tr>
+<tr><td>JVM: </td><td>Java HotSpot(TM) 64-Bit Server VM, 25.111-b14, mixed mode</td></tr>
+<tr><td>PID of process: </td><td>11416</td></tr>
+<tr><td>Server: </td><td>
+<img src='?resource=servers/tomcat.png' alt='Server'/>
+Apache Tomcat/8.0.50 </td></tr>
+<tr><td>Webapp context: </td><td>/jk </td></tr>
+<tr><td>Start: </td><td>18-3-26 ÉÏÎç7:56</td></tr>
+<tr><td valign='top'>JVM arguments: </td><td>-Djava.util.logging.config.file=H:\apache-tomcat-8.0.50\conf\logging.properties<br/>-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager<br/>-Djdk.tls.ephemeralDHKeySize=2048<br/>-Djava.protocol.handler.pkgs=org.apache.catalina.webresources<br/>-Dignore.endorsed.dirs=<br/>-Dcatalina.base=H:\apache-tomcat-8.0.50<br/>-Dcatalina.home=H:\apache-tomcat-8.0.50<br/>-Djava.io.tmpdir=H:\apache-tomcat-8.0.50\temp</td></tr>
+<tr><td>Mean age of http sessions (min): </td><td><a class='tooltip' href='?part=graph&amp;graph=httpSessionsMeanAge' onmouseover="document.getElementById('idhttpSessionsMeanAge').src='?graph=httpSessionsMeanAge&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idhttpSessionsMeanAge' alt='graph'/></em>-1</a></td></tr>
+<tr><td valign='top'>Tomcat "http-apr-8080": </td><td>Busy threads = 
+<a class='tooltip' href='?part=graph&amp;graph=tomcatBusyThreads' onmouseover="document.getElementById('idtomcatBusyThreads').src='?graph=tomcatBusyThreads&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idtomcatBusyThreads' alt='graph'/></em>0</a> /  200
+&nbsp;&nbsp;&nbsp;
+<img src='?resource=bar/rb_a0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_0.gif' alt='+' title='0.00%' /><img src='?resource=bar/rb_b0.gif' alt='+' title='0.00%' />
+<br/>Bytes received = 
+<a class='tooltip' href='?part=graph&amp;graph=tomcatBytesReceived' onmouseover="document.getElementById('idtomcatBytesReceived').src='?graph=tomcatBytesReceived&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idtomcatBytesReceived' alt='graph'/></em>0</a><br/>Bytes sent = 
+<a class='tooltip' href='?part=graph&amp;graph=tomcatBytesSent' onmouseover="document.getElementById('idtomcatBytesSent').src='?graph=tomcatBytesSent&amp;width=100&amp;height=50'; this.onmouseover=null;" ><em><img src='?resource=systeminfo.png' id='idtomcatBytesSent' alt='graph'/></em>1,000</a><br/>Request count = 
+3
+<br/>Error count = 
+1
+<br/>Sum of processing times (ms) = 
+79
+<br/>Max processing time (ms) = 
+32
+</td> </tr>
+<tr><td valign='top'>Memory: </td><td>Non heap memory = 32 Mb (Perm Gen, Code Cache),<br/>Loaded classes = 3,528,<br/>Garbage collection time = 168 ms,<br/></td></tr>
+<tr><td>Free disk space: </td><td>153,173 Mb </td></tr>
+<tr><td valign='top'>Dependencies: </td><td>
+3 dependencies
+ ; &nbsp;&nbsp;&nbsp;
+<a href="javascript:showHide('detailsDependencies2');" class='noPrint'><img id='detailsDependencies2Img' src='?resource=bullets/plus.png' alt=''/> Details</a>
+<br/>
+<div id='detailsDependencies2' style='display: none;'><div>
+comet4j-jar.jar,<br/>javamelody-1.26.0.jar,<br/>jira-javamelody-1.26.0.jar
+</div></div>
+</td></tr>
+</table>
+</div></div>
+<h3 style='clear:both;'><a name='threads'></a><img width='24' height='24' src='?resource=threads.png' alt='Threads'/>
+Threads</h3>
+<b>Threads on LAPTOP-Q17HPK01@169.254.158.89: </b>Number = 39, Maximum = 44, Total started = 51
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript:showHide('threads_0');" class='noPrint'><img id='threads_0Img' src='?resource=bullets/plus.png' alt=''/> Details</a>
+<br/><br/><div id='threads_0' style='display: none;'>
+<table class='sortable' width='100%' border='1' cellspacing='0' cellpadding='2' summary='Threads'>
+<thead><tr><th>Thread</th><th>Daemon ?</th><th class='sorttable_numeric'>Priority</th><th>State</th><th>Executed method</th><th class='sorttable_numeric'>Cpu time (ms)</th><th class='sorttable_numeric'>User time (ms)</th></tr></thead><tbody>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-Acceptor-0<br/>
+org.apache.tomcat.jni.Socket.accept(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-Acceptor-0</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>org.apache.tomcat.jni.Socket.accept(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-AsyncTimeout<br/>
+java.lang.Thread.sleep(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AbstractEndpoint$AsyncTimeout.run(AbstractEndpoint.java:130)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-AsyncTimeout</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/blue.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Thread.sleep(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-1<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-1</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-10<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-10</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-2<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-2</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-3<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-3</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-4<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-4</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-5<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-5</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-6<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-6</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-7<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-7</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-8<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-8</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-exec-9<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-exec-9</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+ajp-apr-8009-Poller<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AprEndpoint$Poller.run(AprEndpoint.java:1705)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ajp-apr-8009-Poller</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+AsyncFileHandlerWriter-1229416514<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingDeque.pollFirst(LinkedBlockingDeque.java:522)<br/>
+java.util.concurrent.LinkedBlockingDeque.poll(LinkedBlockingDeque.java:684)<br/>
+org.apache.juli.AsyncFileHandler$LoggerThread.run(AsyncFileHandler.java:153)<br/>
+</em>
+AsyncFileHandlerWriter-1229416514</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>15</td> <td align='right'>15</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td>Attach&nbsp;Listener</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>&nbsp;</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+Comet4J-ConnectorCleaner<br/>
+java.lang.Thread.sleep(Native&nbsp;Method)<br/>
+org.comet4j.core.CometConnector$CacheCleaner.run(CometConnector.java:110)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+Comet4J-ConnectorCleaner</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/blue.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Thread.sleep(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+Comet4J-MessageCleaner<br/>
+java.lang.Thread.sleep(Native&nbsp;Method)<br/>
+org.comet4j.core.ExpiresCache$CacheCleaner.run(ExpiresCache.java:86)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+Comet4J-MessageCleaner</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/blue.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Thread.sleep(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+ContainerBackgroundProcessor[StandardEngine[Catalina]]<br/>
+java.lang.Thread.dumpThreads(Native&nbsp;Method)<br/>
+java.lang.Thread.getAllStackTraces(Thread.java:1607)<br/>
+net.bull.javamelody.JavaInformations.buildThreadInformationsList(JavaInformations.java:282)<br/>
+net.bull.javamelody.JavaInformations.&lt;init&gt;(JavaInformations.java:183)<br/>
+net.bull.javamelody.HtmlController.writeHtmlToLastShutdownFile(HtmlController.java:276)<br/>
+net.bull.javamelody.MonitoringController.writeHtmlToLastShutdownFile(MonitoringController.java:218)<br/>
+net.bull.javamelody.FilterContext.destroy(FilterContext.java:271)<br/>
+net.bull.javamelody.MonitoringFilter.destroy(MonitoringFilter.java:96)<br/>
+org.apache.catalina.core.ApplicationFilterConfig.release(ApplicationFilterConfig.java:318)<br/>
+org.apache.catalina.core.StandardContext.filterStop(StandardContext.java:4741)<br/>
+org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5536)<br/>
+org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:221)<br/>
+org.apache.catalina.core.StandardContext.reload(StandardContext.java:3861)<br/>
+org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1406)<br/>
+org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1379)<br/>
+org.apache.catalina.startup.HostConfig.check(HostConfig.java:1615)<br/>
+org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:318)<br/>
+org.apache.catalina.util.LifecycleSupport.fireLifecycleEvent(LifecycleSupport.java:95)<br/>
+org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:90)<br/>
+org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1168)<br/>
+org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1377)<br/>
+org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1381)<br/>
+org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1349)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+ContainerBackgroundProcessor[StandardEngine[Catalina]]</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>java.lang.Thread.dumpThreads(Native&nbsp;Method)</td> <td align='right'>2,250</td> <td align='right'>906</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+Finalizer<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)<br/>
+java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)<br/>
+java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)<br/>
+</em>
+Finalizer</a>
+</td> <td align='center'>yes</td> <td align='right'>8</td> <td><img src='?resource=bullets/yellow.png' alt='WAITING'/>WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+GC&nbsp;Daemon<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+sun.misc.GC$Daemon.run(GC.java:117)<br/>
+</em>
+GC&nbsp;Daemon</a>
+</td> <td align='center'>yes</td> <td align='right'>2</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+HealthSender<br/>
+java.lang.Thread.sleep(Native&nbsp;Method)<br/>
+com.zxy.ticket.HealthSender.run(HealthSender.java:27)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+HealthSender</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/blue.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Thread.sleep(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-Acceptor-0<br/>
+org.apache.tomcat.jni.Socket.accept(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-Acceptor-0</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>org.apache.tomcat.jni.Socket.accept(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-AsyncTimeout<br/>
+java.lang.Thread.sleep(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AbstractEndpoint$AsyncTimeout.run(AbstractEndpoint.java:130)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-AsyncTimeout</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/blue.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Thread.sleep(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-1<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-1</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-10<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-10</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-2<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-2</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-3<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-3</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>78</td> <td align='right'>62</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-4<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-4</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>15</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-5<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-5</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>15</td> <td align='right'>15</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-6<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-6</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-7<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-7</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-8<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-8</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-exec-9<br/>
+sun.misc.Unsafe.park(Native&nbsp;Method)<br/>
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)<br/>
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)<br/>
+java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)<br/>
+org.apache.tomcat.util.threads.TaskQueue.poll(TaskQueue.java:85)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:97)<br/>
+org.apache.tomcat.util.threads.TaskQueue.take(TaskQueue.java:31)<br/>
+java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)<br/>
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)<br/>
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)<br/>
+org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-exec-9</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>sun.misc.Unsafe.park(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+http-apr-8080-Poller<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+org.apache.tomcat.util.net.AprEndpoint$Poller.run(AprEndpoint.java:1705)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-Poller</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+http-apr-8080-Sendfile<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+java.lang.Object.wait(Object.java:502)<br/>
+org.apache.tomcat.util.net.AprEndpoint$Sendfile.run(AprEndpoint.java:2261)<br/>
+java.lang.Thread.run(Thread.java:745)<br/>
+</em>
+http-apr-8080-Sendfile</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='WAITING'/>WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+javamelody&nbsp;jk<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+java.util.TimerThread.mainLoop(Timer.java:552)<br/>
+java.util.TimerThread.run(Timer.java:505)<br/>
+</em>
+javamelody&nbsp;jk</a>
+</td> <td align='center'>yes</td> <td align='right'>5</td> <td><img src='?resource=bullets/yellow.png' alt='TIMED_WAITING'/>TIMED_WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td><a class='tooltip'>
+<em>
+main<br/>
+java.net.DualStackPlainSocketImpl.accept0(Native&nbsp;Method)<br/>
+java.net.DualStackPlainSocketImpl.socketAccept(DualStackPlainSocketImpl.java:131)<br/>
+java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)<br/>
+java.net.PlainSocketImpl.accept(PlainSocketImpl.java:199)<br/>
+java.net.ServerSocket.implAccept(ServerSocket.java:545)<br/>
+java.net.ServerSocket.accept(ServerSocket.java:513)<br/>
+org.apache.catalina.core.StandardServer.await(StandardServer.java:464)<br/>
+org.apache.catalina.startup.Catalina.await(Catalina.java:729)<br/>
+org.apache.catalina.startup.Catalina.start(Catalina.java:675)<br/>
+sun.reflect.NativeMethodAccessorImpl.invoke0(Native&nbsp;Method)<br/>
+sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br/>
+sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br/>
+java.lang.reflect.Method.invoke(Method.java:498)<br/>
+org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:349)<br/>
+org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:483)<br/>
+</em>
+main</a>
+</td> <td align='center'>no</td> <td align='right'>5</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>java.net.DualStackPlainSocketImpl.accept0(Native&nbsp;Method)</td> <td align='right'>1,734</td> <td align='right'>1,250</td></tr>
+<tr class='odd' onmouseover="this.className='highlight'" onmouseout="this.className='odd'"><td><a class='tooltip'>
+<em>
+Reference&nbsp;Handler<br/>
+java.lang.Object.wait(Native&nbsp;Method)<br/>
+java.lang.Object.wait(Object.java:502)<br/>
+java.lang.ref.Reference.tryHandlePending(Reference.java:191)<br/>
+java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)<br/>
+</em>
+Reference&nbsp;Handler</a>
+</td> <td align='center'>yes</td> <td align='right'>10</td> <td><img src='?resource=bullets/yellow.png' alt='WAITING'/>WAITING</td> <td>java.lang.Object.wait(Native&nbsp;Method)</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+<tr onmouseover="this.className='highlight'" onmouseout="this.className=''"><td>Signal&nbsp;Dispatcher</td> <td align='center'>yes</td> <td align='right'>9</td> <td><img src='?resource=bullets/green.png' alt='RUNNABLE'/>RUNNABLE</td> <td>&nbsp;</td> <td align='right'>0</td> <td align='right'>0</td></tr>
+</tbody></table>
+<div align='right'>
+The cpu times and user times of these threads are measured from the start of the server
+</div>
+</div><br/>
+
+<br/><div style='font-size:10pt;'>
+Last collect time: 130 ms<br/>
+Display time: 10 ms<br/>
+Memory overhead estimate: < 1 Mb
+<br/><br/>JavaMelody 1.26.0
+</div>
+</body></html>

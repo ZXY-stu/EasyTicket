@@ -1,0 +1,41 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="ad_size">130dp</dimen>
+    <dimen name="titletextsize">25dp</dimen>
+    <dimen name="titlebarsize">55dp</dimen>
+    <dimen name="line_size">35dp</dimen>
+    <dimen name="paddingleft">6dp</dimen>
+    <dimen name="paddingtop">5dp</dimen>
+    <dimen name="paddingtop_saleNum">24dp</dimen>
+    <dimen name="dealtextsize">20dp</dimen>
+    <dimen name="label_size">10sp</dimen>
+    <dimen name="ticket_picture_size">110dp</dimen>
+    <dimen name="grade_size">10sp</dimen>
+    <dimen name="ticket_name_size">18sp</dimen>
+    <dimen name="ticket_price_size">15sp</dimen>
+    <dimen name="ticket_locate_size">11sp</dimen>
+    <dimen name="ticket_brief_size">14sp</dimen>
+    <dimen name="button_share_evaluate_size">20dp</dimen>
+    <dimen name="ticket_dealLine_size">12sp</dimen>
+    <dimen name="button_space">12dp</dimen>
+    <dimen name="icon_size">25dp</dimen>
+    <dimen name="frame_left_space">15dp</dimen>
+    <dimen name="frame_right_space">30dp</dimen>
+    <dimen name="frame_top_space">20dp</dimen>
+    <dimen name="LineSize">55dp</dimen>
+    <dimen name="deal_page_size">15sp</dimen>
+    <dimen name="grid_deal_size">60dp</dimen>
+    <dimen name="zoomSize">6dp</dimen>
+    <dimen name="yellow_line_size">4dp</dimen>
+    <dimen name="subway_car_text_size">21sp</dimen>
+    <dimen name="car_subway_frame_size">45dp</dimen>
+    <dimen name="widget_space">12dp</dimen>
+    <dimen name="date_size">25dp</dimen>
+    <dimen name="check_buton_locate">45dp</dimen>
+    <dimen name="subway_car_Line_size">40dp</dimen>
+    <dimen name="login_pacing">30dp</dimen>
+</resources>

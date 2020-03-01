@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>WorkProcess</servlet-name>
+		<servlet-class>WorkProcess</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>WorkProcess</servlet-name>
+		<url-pattern>/WorkProcess</url-pattern>
+	</servlet-mapping>
+</web-app>

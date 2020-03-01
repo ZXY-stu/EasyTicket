@@ -1,0 +1,17 @@
+127.0.0.1 - - [09/May/2019:13:50:50 +0800] "GET / HTTP/1.1" 200 11452
+127.0.0.1 - - [09/May/2019:13:50:50 +0800] "GET /tomcat.css HTTP/1.1" 200 5931
+127.0.0.1 - - [09/May/2019:13:50:50 +0800] "GET /tomcat.png HTTP/1.1" 200 5103
+127.0.0.1 - - [09/May/2019:13:50:51 +0800] "GET /bg-upper.png HTTP/1.1" 200 3103
+127.0.0.1 - - [09/May/2019:13:50:51 +0800] "GET /bg-button.png HTTP/1.1" 200 713
+127.0.0.1 - - [09/May/2019:13:50:51 +0800] "GET /bg-nav.png HTTP/1.1" 200 1401
+127.0.0.1 - - [09/May/2019:13:50:51 +0800] "GET /asf-logo-wide.svg HTTP/1.1" 200 27530
+127.0.0.1 - - [09/May/2019:13:50:51 +0800] "GET /bg-middle.png HTTP/1.1" 200 1918
+127.0.0.1 - - [09/May/2019:13:51:12 +0800] "GET /Server/toUserLogin HTTP/1.1" 404 1030
+127.0.0.1 - - [09/May/2019:13:51:20 +0800] "GET /Server/toLogin HTTP/1.1" 200 2384
+127.0.0.1 - - [09/May/2019:13:51:20 +0800] "GET /Server/html/css/admin.css HTTP/1.1" 200 4118
+127.0.0.1 - - [09/May/2019:13:51:20 +0800] "GET /Server/html/js/jquery.js HTTP/1.1" 200 96381
+127.0.0.1 - - [09/May/2019:13:51:20 +0800] "GET /Server/html/css/pintuer.css HTTP/1.1" 200 112149
+127.0.0.1 - - [09/May/2019:13:51:21 +0800] "GET /Server/html/js/pintuer.js HTTP/1.1" 200 16354
+127.0.0.1 - - [09/May/2019:13:51:21 +0800] "GET /Server/html/images/bg.jpg HTTP/1.1" 200 103501
+127.0.0.1 - - [09/May/2019:13:51:21 +0800] "GET /Server/html/images/tmbg-white.png HTTP/1.1" 200 1012
+127.0.0.1 - - [09/May/2019:13:51:31 +0800] "GET /Server/toRegister HTTP/1.1" 200 6312

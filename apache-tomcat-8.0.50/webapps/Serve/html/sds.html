@@ -1,0 +1,39 @@
+    String basePath="I:/Eclipse/TempFile";
+		    UUID uuid = UUID.randomUUID();
+		    long time = System.currentTimeMillis();
+		  ServerLog serverLog = new  ServerLog("TempFile",uuid+""+time+".txt");
+		  
+		 
+		    String filedisplay = "TicketInfo.txt"; 
+		    String filedownload = basePath + File.separator + serverLog.filename; 
+		    response.setContentType("applicaiton/x-download"); 
+		    response.addHeader("Content-Disposition", "attachment;filename="+filedisplay); 
+		      
+		    InputStream is = null; 
+		    OutputStream os = null; 
+		    BufferedInputStream bis = null; 
+		    BufferedOutputStream bos = null; 
+		      
+		    try {
+				is = new FileInputStream(new File(filedownload));
+			
+		    bis = new BufferedInputStream(is); 
+		    
+		    os = response.getOutputStream(); 
+		    bos = new BufferedOutputStream(os); 
+		      
+		    byte[] b = new byte[1024]; 
+		    int len = 0; 
+		    while((len = bis.read(b)) != -1){ 
+		      bos.write(b,0,len); 
+		    } 
+		   
+		    bis.close(); 
+		    is.close(); 
+		    bos.close(); 
+		    os.close(); 
+		    } catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		      

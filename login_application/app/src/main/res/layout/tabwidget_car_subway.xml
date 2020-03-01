@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/car_subway_frame_size"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    android:layout_marginTop="@dimen/appbar_padding_top"
+    >
+
+
+    <TextView
+        android:layout_marginTop="@dimen/widget_space"
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/subway_car_text_size"
+        />
+
+    <ImageView
+        android:layout_marginTop="@dimen/widget_space"
+        android:id="@+id/img_name"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/yellow_line_size"
+        />
+
+</LinearLayout>

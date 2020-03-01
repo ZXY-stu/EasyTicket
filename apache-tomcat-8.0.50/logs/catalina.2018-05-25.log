@@ -1,0 +1,332 @@
+25-May-2018 02:22:03.743 严重 [ajp-apr-8009-exec-10] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+25-May-2018 02:22:04.218 严重 [ajp-apr-8009-exec-1] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 5635
+25-May-2018 02:22:04.697 严重 [ajp-apr-8009-exec-5] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 32926
+25-May-2018 02:22:05.173 严重 [ajp-apr-8009-exec-2] org.apache.coyote.ajp.AjpMessage.processHeader Invalid message received with signature 18245
+25-May-2018 07:38:57.711 信息 [http-apr-8080-exec-3] org.apache.coyote.http11.AbstractHttp11Processor.process Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.InternalAprInputBuffer.parseRequestLine(InternalAprInputBuffer.java:189)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1045)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:684)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2527)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2516)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 09:36:50.273 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 10:39:06.702 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 10:39:06.936 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 10:47:16.847 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:04.394 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:05.432 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:18.971 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:20.573 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:22.175 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:23.777 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:25.379 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:26.991 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:28.592 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:30.195 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:31.797 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:01:33.399 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:12:18.455 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:22:30.818 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 11:44:38.329 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 12:23:34.361 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 12:23:35.965 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 12:26:33.842 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 12:39:22.259 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:27:28.879 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:27:30.482 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:34:47.896 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:37:13.437 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:37:15.041 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 13:41:10.579 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:45:35.242 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:45:36.845 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:08.477 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:11.467 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:16.716 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:23.573 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:35.316 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:44.676 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 14:58:56.338 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.50
+25-May-2018 14:58:56.344 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 7 2018 20:06:05 UTC
+25-May-2018 14:58:56.348 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.50.0
+25-May-2018 14:58:56.349 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+25-May-2018 14:58:56.349 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+25-May-2018 14:58:56.349 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+25-May-2018 14:58:56.349 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_111\jre
+25-May-2018 14:58:56.349 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_111-b14
+25-May-2018 14:58:56.350 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+25-May-2018 14:58:56.350 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         I:\apache-tomcat-8.0.50
+25-May-2018 14:58:56.350 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         I:\apache-tomcat-8.0.50
+25-May-2018 14:58:56.350 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=I:\apache-tomcat-8.0.50\conf\logging.properties
+25-May-2018 14:58:56.351 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-May-2018 14:58:56.351 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+25-May-2018 14:58:56.351 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-May-2018 14:58:56.351 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+25-May-2018 14:58:56.352 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=I:\apache-tomcat-8.0.50
+25-May-2018 14:58:56.354 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=I:\apache-tomcat-8.0.50
+25-May-2018 14:58:56.355 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=I:\apache-tomcat-8.0.50\temp
+25-May-2018 14:58:56.357 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded APR based Apache Tomcat Native library 1.2.16 using APR version 1.6.3.
+25-May-2018 14:58:56.361 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-May-2018 14:58:57.425 信息 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized (OpenSSL 1.0.2m  2 Nov 2017)
+25-May-2018 14:58:57.597 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-apr-8080"]
+25-May-2018 14:58:57.648 信息 [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-apr-8009"]
+25-May-2018 14:58:57.660 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1785 ms
+25-May-2018 14:58:57.693 信息 [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+25-May-2018 14:58:57.694 信息 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.50
+25-May-2018 14:58:57.720 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\comet4j-master
+25-May-2018 14:58:58.220 警告 [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [149] milliseconds.
+25-May-2018 14:58:58.243 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\comet4j-master has finished in 523 ms
+25-May-2018 14:58:58.253 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\docs
+25-May-2018 14:58:58.303 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\docs has finished in 50 ms
+25-May-2018 14:58:58.305 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\examples
+25-May-2018 14:58:58.836 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\examples has finished in 531 ms
+25-May-2018 14:58:58.837 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\host-manager
+25-May-2018 14:58:58.883 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\host-manager has finished in 47 ms
+25-May-2018 14:58:58.884 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\jk
+25-May-2018 14:58:59.556 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-May-2018 14:59:00.794 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\jk has finished in 1,910 ms
+25-May-2018 14:59:00.795 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\manager
+25-May-2018 14:59:00.843 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\manager has finished in 48 ms
+25-May-2018 14:59:00.843 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\ROOT
+25-May-2018 14:59:00.877 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\ROOT has finished in 33 ms
+25-May-2018 14:59:00.877 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\Server
+25-May-2018 14:59:01.770 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+25-May-2018 14:59:01.809 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\Server has finished in 932 ms
+25-May-2018 14:59:01.810 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory I:\apache-tomcat-8.0.50\webapps\t
+25-May-2018 14:59:01.876 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory I:\apache-tomcat-8.0.50\webapps\t has finished in 66 ms
+25-May-2018 14:59:01.882 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-apr-8080"]
+25-May-2018 14:59:01.938 信息 [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-apr-8009"]
+25-May-2018 14:59:01.979 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 4318 ms
+25-May-2018 21:27:02.446 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 21:27:02.670 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 21:55:06.264 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 21:56:10.804 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 23:00:17.347 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 23:29:00.405 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
+25-May-2018 23:29:02.010 严重 [http-apr-8080-Acceptor-0] org.apache.tomcat.util.net.AprEndpoint$Acceptor.run Socket accept failed
+ org.apache.tomcat.jni.Error: 730022: ?????????Ч?????
+	at org.apache.tomcat.jni.Socket.accept(Native Method)
+	at org.apache.tomcat.util.net.AprEndpoint$Acceptor.run(AprEndpoint.java:1073)
+	at java.lang.Thread.run(Thread.java:745)
+
