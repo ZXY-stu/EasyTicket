@@ -117,9 +117,9 @@ public class Client implements Runnable{
     			}
     	   if(isStart){
     		    speed_content.setText(String.format("time:%5.2f",checkMac.proTime));
-          		mac_content.setText("read"+":"+ checkMac.readyToUse.toString());
-          	 	speed.setText("mac:"+checkMac.Mac.toString()+" ");
-          	 	mac.setText("resource"+checkMac.ResourceMac.toString());
+          		mac_content.setText("read"+":"+ checkMac.DRL.toString());
+          	 	speed.setText("mac:"+checkMac.DAL.toString()+" ");
+          	 	mac.setText("resource"+checkMac.RUAL.toString());
     	   }
     	  }
       }
