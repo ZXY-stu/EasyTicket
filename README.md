@@ -28,4 +28,9 @@
  - 右边部分模拟了现实景区或者地铁的一个闸机门示意图，一共有四个闸机门。若用户选择的是第3个闸机门，那么点击门票使用的时候，第三个闸机门将开启。
  - 门票使用 = 断开与检票端热点连接 + 检票端检测断开用户是否为指定用户 + 开启对应闸机门。
  ### 使用介绍
- - 使用该系统需要一个USB无线网卡（某些版本的系统可能无法使用） 
+ - 使用该系统需要一个USB无线网卡（某些版本的系统可能无法使用）。 
+ - DeviceServer是虚拟闸机门，需要先开启DeviceServer，再启动Client。
+ - Client 是检票端，ip地址需要根据运行服务器机器的ip地址而定。
+ - 设置Client 服务器Ip 地址在Client.java 的main函数内。
+ - 双击apache-tomcat-8.0.50/bin/startup.bat可直接运行服务器。
+ - login_application是android studio 工程包，可以通过android studio直接编译生成手机app。
