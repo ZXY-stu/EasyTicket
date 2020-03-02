@@ -20,6 +20,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="subway">地铁</string>
+    <string name="IPSET">服务器地址</string>
     <string name="car">汽车</string>
     <string name="movie">电影</string>
     <string name="music">音乐</string>

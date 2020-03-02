@@ -30,7 +30,7 @@ public class SetIpActivity extends AppCompatActivity {
     }
     public void sumbit(){
         String ip = setIp.getText().toString();
-        GetUser.setUrl(ip);
+        GetUser.setUrl(ip,this);
         Toast.makeText(this,GetUser.url(),'1').show();
        startActivity(new Intent(this,LoginActivity.class));
     }

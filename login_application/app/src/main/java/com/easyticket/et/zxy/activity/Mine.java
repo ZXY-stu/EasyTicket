@@ -74,7 +74,8 @@ public class Mine extends BaseActivity {
         sets.get(5).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(),"设置服务器IP",1).show();
+                startActivity(new Intent(getApplicationContext(),SetIpActivity.class));
             }
         });
         sets.get(6).setOnClickListener(new View.OnClickListener() {
@@ -119,8 +120,10 @@ public class Mine extends BaseActivity {
         sets.add((LinearLayout) findViewById(R.id.myWallet));
         sets.add((LinearLayout) findViewById(R.id.pay_set));
         sets.add((LinearLayout) findViewById(R.id.phone_bind));
-        sets.add((LinearLayout) findViewById(R.id.about_us));
+        sets.add((LinearLayout) findViewById(R.id.Ip_set));
+
         sets.add((LinearLayout) findViewById(R.id.logout));
+        sets.add((LinearLayout) findViewById(R.id.about_us));
     }
 
     public void  requestLogOut(final String phone) {

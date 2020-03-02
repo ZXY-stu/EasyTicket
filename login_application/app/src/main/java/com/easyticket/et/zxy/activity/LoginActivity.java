@@ -90,7 +90,9 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.login);
 
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-       Toast.makeText(this,GetUser.url(),1).show();
+       GetUser.init(this);
+       // Toast.makeText(this,GetUser.url(),Toast.LENGTH_LONG).show();
+
         // Set up the login form.
         mPhoneView =  (EditText)findViewById(R.id.phone);
         progressDialog = new ProgressDialog(this);
